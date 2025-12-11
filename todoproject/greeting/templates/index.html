@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1{
+            background-color: blue;
+        }
+    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script type="text/javascript">
+     function changeGreeting() {
+         document.getElementsByTagName('h1')[0].innerHTML = 'Welcome to MashupStack'
+     }
+    </script>
+</head>
+<body>
+    <h1 style="color:red">Hello World</h1>
+    <img src="https://media.architecturaldigest.com/photos/66a914f1a958d12e0cc94a8e/16:9/w_2992,h_1683,c_limit/DSC_5903.jpg" height="400px" width="400px" alt="">
+    <img src="{% static 'car.jpg' %}" alt="">
+    <button onclick="changeGreeting()">click me</button>
+</body>
+</html>
