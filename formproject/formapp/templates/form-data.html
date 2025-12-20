@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h2>{{ email }}</h2>
+    <table>
+    {% for x,y in formData.items %}
+     <tr>
+         <td>{{ x }}</td>
+         <td>:</td>
+         <td>{{ y }}</td>
+     </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

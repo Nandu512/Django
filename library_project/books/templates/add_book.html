@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Book</title>
+</head>
+<body>
+<h2>Add New Book</h2>
+<nav>
+    <a href="{% url 'about_us' %}">About us</a>
+</nav>
+
+
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Save Book</button>
+</form>
+
+
+<a href="/books/list/">View All Books</a>
+</body>
+</html>

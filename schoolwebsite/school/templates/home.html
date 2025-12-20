@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Students</h1>
+
+    <ul>
+        {% for student in students %}
+        <li>
+            {{ student }}
+            <a href="{% url 'result' student %}">View Result</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
