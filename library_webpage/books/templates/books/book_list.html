@@ -1,0 +1,24 @@
+<h2>Library Books</h2>
+<a href="{% url 'add_book' %}">Add New Book</a>
+
+<ul>
+{% for book in page_obj %}
+  <li>
+    {{ book.title }} - {{ book.author }} ({{ book.year }})
+    <a href="{% url 'edit_book' book.id %}">Edit</a>
+    <a href="{% url 'delete_book' book.id %}">Delete</a>
+  </li>
+{% endfor %}
+</ul>
+
+<div>
+{% if page_obj.has_previous %}
+  <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+{% endif %}
+
+Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+
+{% if page_obj.has_next %}
+  <a href="?page={{ page_obj.next_page_number }}">Next</a>
+{% endif %}
+</div>
