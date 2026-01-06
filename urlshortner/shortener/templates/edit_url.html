@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit URL</title>
+</head>
+<body>
+
+<h2>Edit URL</h2>
+
+<form method="POST" onsubmit="return confirm('Do you want to save changes');">
+    {% csrf_token %}
+
+    <label>Title:</label><br>
+    <input type="text" name="title" value="{{ url.title }}" required><br><br>
+
+    <label>Original URL:</label><br>
+    <input type="url" name="original_url" value="{{ url.original_url }}" required><br><br>
+
+    <button type="submit">Update</button>
+</form>
+
+<br>
+<a href="{% url 'list_urls' %}">Back</a>
+
+</body>
+</html>
